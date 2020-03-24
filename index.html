@@ -157,7 +157,7 @@
         </div>
     </footer>
 
-    <section class="modal modal-login">
+    <section class="modal modal-login visually-hidden">
         <h2>Личный кабинет</h2>
         <p class="modal-description">Введите свой логин и пароль</p>
         <form class="login-form" action="https://echo.htmlacademy.ru" method="POST">
@@ -188,5 +188,22 @@
         <button class="modal-close" type="Закрыть">Войти</button>
     </section>
     <div class="modal-overlay"></div>
+
+    <script>
+        var link = document.querySelector(".login-link");
+        var popup = document.querySelector(".modal-login");
+        var close = document.querySelector(".modal-close");
+
+        link.addEventListener("click", function (evt) {
+            evt.preventDefault();
+            popup.classList.remove("visually-hidden")
+        });
+
+        close.addEventListener("click", function (evt) {
+            evt.preventDefault();
+            popup.classList.add("visually-hidden")
+        });
+    </script>
+
 </body>
 </html>
